@@ -4,21 +4,16 @@
 """
 
 def classifyTriangle(a,b,c):
-    """
-    Your correct code goes here...  Fix the faulty logic below until the code passes all of 
-    you test cases. 
-    
-    This function returns a string with the type of triangle from three integer values
-    corresponding to the lengths of the three sides of the Triangle.
-    
-    return:
-        If all three sides are equal, return 'Equilateral'
-        If exactly one pair of sides are equal, return 'Isoceles'
-        If no pair of  sides are equal, return 'Scalene'
-        If not a valid triangle, then return 'NotATriangle'
-        If the sum of any two sides equals the squate of the third side, then return 'Right'
-      
-      BEWARE: there may be a bug or two in this code
+    """ classify different types of triangle
+
+        :param a: The side of a triangle
+        :type a: float
+        :param b: The side of a triangle
+        :type b: float
+        :param c: The side of a triangle
+        :type c: float
+        :rtype: str
+        :return: str
     """
 
     # require that the input values be >= 0 and <= 200
@@ -28,12 +23,9 @@ def classifyTriangle(a,b,c):
         return 'InvalidInput'
     
     # verify that all 3 inputs are integers  
-    # Python's "isinstance(object,type) returns True if the object is of the specified type
     if not(isinstance(a,int) and isinstance(b,int) and isinstance(c,int)):
         return 'InvalidInput'
-      
-    # This information was not in the requirements spec but 
-    # is important for correctness
+        
     # the sum of any two sides must be strictly less than the third side
     # of the specified shape is not a triangle
     if ((b + c) < a) or ((a + c) < b) or ((a + b) < c):
